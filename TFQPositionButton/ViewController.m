@@ -18,11 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self createBtnWithY:100 andTitle:@"我是文字" andImagePositon:TFQImageLeft];
-    [self createBtnWithY:200 andTitle:@"我是文字" andImagePositon:TFQImageRight];
-    [self createBtnWithY:300 andTitle:@"我是文字" andImagePositon:TFQImageUp];
-    [self createBtnWithY:400 andTitle:@"我是文字" andImagePositon:TFQImageDown];
-    [self createBtnWithY:500 andTitle:@"我是文字" andImagePositon:4];
+//    [self createBtnWithY:100 andTitle:@"我是文字" andImagePositon:TFQImageLeft];
+//    [self createBtnWithY:200 andTitle:@"我是文字" andImagePositon:TFQImageRight];
+//    [self createBtnWithY:300 andTitle:@"我是文字" andImagePositon:TFQImageUp];
+//    [self createBtnWithY:400 andTitle:@"我是文字" andImagePositon:TFQImageDown];
+//    [self createBtnWithY:500 andTitle:@"我是文字" andImagePositon:4];
+    
+    [self getTextSize];
 }
 
 ///根据title和y创建button
@@ -38,6 +40,31 @@
     }
     btn.titleLabel.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:btn];
+}
+
+///计算label的size
+- (CGSize)getTextSize{
+    NSString *text = @"大家好，我是测试文字";
+    UIFont *font = [UIFont systemFontOfSize:14];
+    NSDictionary *dict = @{NSFontAttributeName:font};
+    //iOS7以后  缺点：无法设置宽度，默认一行 所以推荐下边的计算方式
+    CGSize labelSize = [text sizeWithAttributes:dict];
+    NSLog(@"%f %f",labelSize.width, labelSize.height);
+    
+    NSStringDrawingOptions option = NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin;
+    //iOS7以后
+    CGRect labelRect = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:option attributes:dict context:nil];
+    NSLog(@"%f %f %f %f",labelRect.origin.x, labelRect.origin.y, labelRect.size.width, labelRect.size.height);
+    
+    NSMutableAttributedString *mutString = [[NSMutableAttributedString alloc]initWithString:@"Hello World!Hello World!Hello World!Hello World!Hello World!"attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]}];
+    [mutString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:20.0] range:NSMakeRange(0, 5)];
+    [mutString addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:28.0] range:NSMakeRange(mutString.length - 6, 5)];
+    
+    //5.计算富文本的size
+    CGSize size = [mutString boundingRectWithSize:CGSizeMake(200, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+                   
+    
+    return CGSizeMake(0, 0);
 }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F769152C237D20F800FC6395 /* NSString+TFQSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F769152B237D20F800FC6395 /* NSString+TFQSize.m */; };
 		F7C41132237AB00100D69D39 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C41131237AB00100D69D39 /* AppDelegate.m */; };
 		F7C41135237AB00100D69D39 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C41134237AB00100D69D39 /* SceneDelegate.m */; };
 		F7C41138237AB00100D69D39 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C41137237AB00100D69D39 /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F769152A237D20F800FC6395 /* NSString+TFQSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+TFQSize.h"; sourceTree = "<group>"; };
+		F769152B237D20F800FC6395 /* NSString+TFQSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+TFQSize.m"; sourceTree = "<group>"; };
 		F7C4112D237AB00100D69D39 /* TFQPositionButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TFQPositionButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C41130237AB00100D69D39 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F7C41131237AB00100D69D39 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 			children = (
 				F7C4114A237AB04600D69D39 /* UIButton+TFQPosition.h */,
 				F7C4114B237AB04600D69D39 /* UIButton+TFQPosition.m */,
+				F769152A237D20F800FC6395 /* NSString+TFQSize.h */,
+				F769152B237D20F800FC6395 /* NSString+TFQSize.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			files = (
 				F7C4114C237AB04600D69D39 /* UIButton+TFQPosition.m in Sources */,
 				F7C41138237AB00100D69D39 /* ViewController.m in Sources */,
+				F769152C237D20F800FC6395 /* NSString+TFQSize.m in Sources */,
 				F7C41132237AB00100D69D39 /* AppDelegate.m in Sources */,
 				F7C41143237AB00300D69D39 /* main.m in Sources */,
 				F7C41135237AB00100D69D39 /* SceneDelegate.m in Sources */,
